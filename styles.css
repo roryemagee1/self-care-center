@@ -4,5 +4,73 @@ light-yellow - #f7e4bf;
 light-blue - #78a7c6;
 dark-blue - #134d71;
 white - #ffffff;
-black - #000000;
-*/
+black - #000000; */
+
+html {
+  background: linear-gradient(0deg, #f7e4bf 15%, #78a7c6 50%, #134d71 85%);
+  height: 100vh;
+}
+
+.header {
+  color: white;
+  font-family: quicksand;
+  text-align: center;
+
+}
+#question {
+  color: white;
+  font-family: quicksand;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#input-box {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: -20px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 50px;
+  padding-top: 25px;
+}
+
+.input-stuff {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+
+.input-separation {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+#button-stuff {
+  background: #134d71;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#buddha-box {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 60px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#shrink-buddha {
+  height: 100%;
+  width: 10%;
+}
+
+#hide {
+  display: none;
+}
