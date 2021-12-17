@@ -1,26 +1,62 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   </head>
+  <body>
     <header>
       <h3 class="header" >✨ Self Care Center ✨ </h3>
     </header>
-    <body>
+
+
+    <section class="main-page">
       <h5 class="header" id="question">Which type of message?</h5>
+
       <div id="input-box">
         <div class="input-stuff">
           <input type="radio" name="choice" class="input-separation" id="affirmations"><i> affirmations </i></input>
           <input type="radio" name="choice" class="input-separation" id="mantras"><i> mantras </i></input>
         </div>
         <div>
-          <button id="button-stuff"> Receive Message </button>
+          <button class="button-stuff" id="receive-button"> Receive Message </button>
+        </div>
+        <div>
+          <button class="button-stuff" id="view-favorites"> View Favorites </button>
         </div>
       </div>
+
       <div id="buddha-box">
         <img id="shrink-buddha" src="./assets/meditate.svg" alt="Meditating Buddha Symbol"/>
       </div>
+
       <script type="text/javascript" src="main.js"></script>
-    </body>
+    </section>
+
+
+
+    <section class="favorites-page hidden">
+      <h5 class="header" id="question">Your Favorites</h5>
+
+      <div>
+        <div class="input-stuff">
+
+        </div>
+        <div>
+          <button class="button-stuff" id="view-main"> Return to Main </button>
+        </div>
+        <div>
+
+        </div>
+      </div>
+
+      <div id="favorites-box">
+
+      </div>
+
+      <script type="text/javascript" src="main.js"></script>
+    </section>
+  </body>
+
 </html>

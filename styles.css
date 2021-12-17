@@ -15,9 +15,41 @@ html {
   color: white;
   font-family: quicksand;
   text-align: center;
+}
+
+.header-favorites {
+  color: white;
+  font-family: quicksand;
+  text-align: center;
+}
+
+.main-page {
 
 }
+
+.favorites-page {
+
+}
+
+#saved-posters-div {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: -20px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 50px;
+  padding-top: 25px;
+}
+
 #question {
+  color: white;
+  font-family: quicksand;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#question-favorites {
   color: white;
   font-family: quicksand;
   text-align: center;
@@ -45,11 +77,9 @@ html {
 .input-separation {
   margin-left: 25px;
   margin-right: 25px;
-
-
 }
 
-#button-stuff {
+.button-stuff {
   background: #134d71;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -74,13 +104,30 @@ html {
   padding-bottom: 25px;
 }
 
+#favorites-box {
+  font-family: quicksand;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 60px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#favorite-button {
+
+}
+
 #shrink-buddha {
   height: 100%;
   width: 10%;
 }
 
-.hide {
-  display: none;
+.hidden {
+  display: none!important;
 }
 
 .paragraph-text {
