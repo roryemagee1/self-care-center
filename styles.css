@@ -31,6 +31,35 @@ html {
 
 }
 
+#receive-button {
+
+}
+
+#view-favorites {
+
+}
+
+#text-holder {
+
+}
+
+#buddhaless-box {
+
+}
+
+.favorites-list {
+  font-family: quicksand;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 60px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 #saved-posters-div {
   text-align: center;
   background-color: #ffffff;
@@ -67,6 +96,17 @@ html {
   padding-top: 25px;
 }
 
+.input-box-class {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: -20px;
+  margin-left: 300px;
+  margin-right: 300px;
+  margin-bottom: 50px;
+  padding-top: 25px;
+}
+
 .input-stuff {
   margin-left: 10px;
   margin-right: 10px;
@@ -91,7 +131,7 @@ html {
   text-align: center;
 }
 
-#buddha-box {
+.buddha-box {
   font-family: quicksand;
   text-align: center;
   background-color: #ffffff;
@@ -102,6 +142,23 @@ html {
   margin-bottom: 25px;
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+.buddhaless-box {
+  font-family: quicksand;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 60px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#paragraph-dump {
+
 }
 
 #favorites-box {
@@ -115,6 +172,19 @@ html {
   margin-bottom: 25px;
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+.favorite-button-box {
+  font-family: quicksand;
+  text-align: center;
+  background-color: #ffffff;
+  /* border-radius: 5px;
+  margin-top: 60px;
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-bottom: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px; */
 }
 
 #favorite-button {
