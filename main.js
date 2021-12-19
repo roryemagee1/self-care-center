@@ -97,7 +97,6 @@ class Favorite {
 function favoriteMessage() {
   messageObject = new Favorite(randomMessage);
   favoritedMessages.push(messageObject);
-  console.log(messageObject);
 };
 
 function generateFavorites() {
