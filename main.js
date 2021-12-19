@@ -1,12 +1,12 @@
-var paragraphOutput = document.querySelector(".paragraph-text");
-// var buddhaOutput = document.querySelector("#shrink-buddha");
+// DOM Variables
+
 var receiveMessageButton = document.querySelector("#receive-button");
+var paragraphDump = document.querySelector("#paragraph-dump");
+
 var buddhaBox = document.querySelector(".buddha-box");
 var buddhalessBox = document.querySelector(".buddhaless-box");
-var paragraphDump = document.querySelector("#paragraph-dump");
 var favoriteButtonBox = document.querySelector(".favorite-button-box");
-// var affirmationButton = document.querySelector("#affirmations");
-// var mantraButton = document.querySelector("#mantras");
+
 var radioButtonA = document.querySelector('input[name="choice"][id="affirmations"]');
 var radioButtonM = document.querySelector('input[name="choice"][id="mantras"]');
 
@@ -18,11 +18,15 @@ var toMainPage = document.querySelector("#view-main")
 var favoriteButton = document.querySelector("#favorite-button");
 var favoriteList = document.querySelector(".favorites-list");
 
+// Event Listeners
+
 receiveMessageButton.addEventListener('click', messageOutput);
 toFavoritesPage.addEventListener('click', mainPageToFavoritesPage);
 toMainPage.addEventListener('click', favoritesPageToMainPage);
 favoriteButton.addEventListener('click', favoriteMessage)
 favoriteList.addEventListener('click', function(event) {deleteFavorite(event)});
+
+// Functional Variables
 
 var affirmations = [
   "You got this.",
@@ -41,13 +45,13 @@ var favoritedMessages = [];
 var randomMessage;
 var messageObject = {};
 
+// Functions
 
 function randomArrayIndex() {
   if (arrayOption) {
     return Math.floor(Math.random() * affirmations.length);
   } else if (!arrayOption) {
     return Math.floor(Math.random() * mantras.length);
-  // return (Math.trunc(Math.random() * array.length));
   };
 };
 
@@ -71,10 +75,16 @@ function messageOutput() {
   buddhaBox.classList.add("hidden");
   buddhalessBox.classList.remove("hidden");
   paragraphDump.innerHTML = "";
-  paragraphDump.innerHTML += `
-    <p>${randomMessage}</p>
-    `;
-  favoriteButtonBox.classList.remove("hidden");
+  if (randomMessage === "Select either affirmations or mantras.") {
+    paragraphDump.innerHTML += `
+      <p>${randomMessage}</p>
+      `;
+  } else {
+    paragraphDump.innerHTML += `
+      <p>${randomMessage}</p>
+      `;
+    favoriteButtonBox.classList.remove("hidden");
+  };
 };
 
 class Favorite {
@@ -128,10 +138,5 @@ function favoritesPageToMainPage() {
   event.preventDefault();
   mainPage.classList.remove("hidden");
   favoritesPage.classList.add("hidden");
-  // buddhaBox.classList.remove("hidden");
-  // buddhaBox.innerHTML = "";
-  // buddhaBox.innerHTML += `
-  //   <img id="shrink-buddha" src="./assets/meditate.svg" alt="Meditating Buddha Symbol"/>
-  //   `;
   favoriteButtonBox.classList.remove("hidden");
 };
