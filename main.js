@@ -1,7 +1,10 @@
 var paragraphOutput = document.querySelector(".paragraph-text");
 // var buddhaOutput = document.querySelector("#shrink-buddha");
 var receiveMessageButton = document.querySelector("#receive-button");
-var buddhaBox = document.querySelector("#buddha-box");
+var buddhaBox = document.querySelector(".buddha-box");
+var buddhalessBox = document.querySelector(".buddhaless-box");
+var paragraphDump = document.querySelector("#paragraph-dump");
+var favoriteButtonBox = document.querySelector(".favorite-button-box");
 // var affirmationButton = document.querySelector("#affirmations");
 // var mantraButton = document.querySelector("#mantras");
 var radioButtonA = document.querySelector('input[name="choice"][id="affirmations"]');
@@ -12,11 +15,14 @@ var favoritesPage = document.querySelector(".favorites-page");
 var toFavoritesPage = document.querySelector("#view-favorites");
 var toMainPage = document.querySelector("#view-main")
 
-var favoriteButton = document.querySelector('#favorite-button');
+var favoriteButton = document.querySelector("#favorite-button");
+var favoriteList = document.querySelector(".favorites-list");
 
 receiveMessageButton.addEventListener('click', messageOutput);
 toFavoritesPage.addEventListener('click', mainPageToFavoritesPage);
 toMainPage.addEventListener('click', favoritesPageToMainPage);
+favoriteButton.addEventListener('click', favoriteMessage)
+favoriteList.addEventListener('click', function(event) {deleteFavorite(event)});
 
 var affirmations = [
   "You got this.",
@@ -32,6 +38,8 @@ var mantras = [
 
 var arrayOption = undefined;
 var favoritedMessages = [];
+var randomMessage;
+var messageObject = {};
 
 
 function randomArrayIndex() {
@@ -59,34 +67,71 @@ function outputRandomMessage() {
 };
 
 function messageOutput() {
-  var randomMessage = outputRandomMessage();
-    buddhaBox.innerHTML = "";
-    if (arrayOption === undefined) {
-      buddhaBox.innerHTML += `
-        <img class="hidden" id="shrink-buddha" src="./assets/meditate.svg" alt="Meditating Buddha Symbol"/>
-        <p>${randomMessage}</p>
-        `;
-      } else {
-    buddhaBox.innerHTML += `
-      <img class="hidden" id="shrink-buddha" src="./assets/meditate.svg" alt="Meditating Buddha Symbol"/>
-      <p>${randomMessage}</p>
-      <button class="button-stuff" id="favorite-button"> Favorite Message </button>
-      `;
-    };
+  randomMessage = outputRandomMessage();
+  buddhaBox.classList.add("hidden");
+  buddhalessBox.classList.remove("hidden");
+  paragraphDump.innerHTML = "";
+  paragraphDump.innerHTML += `
+    <p>${randomMessage}</p>
+    `;
+  favoriteButtonBox.classList.remove("hidden");
+};
+
+class Favorite {
+  constructor(message) {
+    this.message = message;
+    this.id = Date.now();
+  };
 };
 
 function favoriteMessage() {
-  favoritedMessages.push(randomMessage);
+  messageObject = new Favorite(randomMessage);
+  favoritedMessages.push(messageObject);
+  console.log(messageObject);
+};
+
+function generateFavorites() {
+  favoriteList.innerHTML = "";
+  if (favoritedMessages.length === 0) {
+    favoriteList.innerHTML += `
+      <p> No Favorites Available </p>
+    `;
+  } else {
+  favoriteList.innerHTML = "";
+    for (var i = 0; i < favoritedMessages.length; i++) {
+      favoriteList.innerHTML += `
+        <p>${favoritedMessages[i].message}</p>
+        <button class="button-stuff" id=${favoritedMessages[i].id}> Delete </button>
+      `;
+    };
+  };
+};
+
+function deleteFavorite(event) {
+  var idCheck = parseInt(event.target.id);
+  for (var i = 0; i < favoritedMessages.length; i++) {
+    if (favoritedMessages[i].id === idCheck) {
+      favoritedMessages.splice(i, 1);
+      generateFavorites();
+    };
+  };
 };
 
 function mainPageToFavoritesPage() {
   event.preventDefault();
   mainPage.classList.add("hidden");
   favoritesPage.classList.remove("hidden");
+  generateFavorites();
 };
 
 function favoritesPageToMainPage() {
   event.preventDefault();
   mainPage.classList.remove("hidden");
   favoritesPage.classList.add("hidden");
+  // buddhaBox.classList.remove("hidden");
+  // buddhaBox.innerHTML = "";
+  // buddhaBox.innerHTML += `
+  //   <img id="shrink-buddha" src="./assets/meditate.svg" alt="Meditating Buddha Symbol"/>
+  //   `;
+  favoriteButtonBox.classList.remove("hidden");
 };

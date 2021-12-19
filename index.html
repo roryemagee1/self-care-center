@@ -12,7 +12,7 @@
 
 
     <section class="main-page">
-      <h5 class="header" id="question">Which type of message?</h5>
+      <h5 class="header" id="question"> Which type of message? </h5>
 
       <div id="input-box">
         <div class="input-stuff">
@@ -27,36 +27,47 @@
         </div>
       </div>
 
-      <div id="buddha-box">
-        <img id="shrink-buddha" src="./assets/meditate.svg" alt="Meditating Buddha Symbol"/>
+      <div id="Xinput-box">
+
+        <div class="buddha-box">
+          <img id="shrink-buddha" src="./assets/meditate.svg" alt="Meditating Buddha Symbol"/>
+        </div>
+        <div class="buddhaless-box hidden">
+          <div id="paragraph-dump">
+          </div>
+          <div class="favorite-button-box hidden">
+            <button class="button-stuff" id="favorite-button"> Favorite Message </button>
+          </div>
+        </div>
+
       </div>
 
-      <script type="text/javascript" src="main.js"></script>
     </section>
 
 
 
     <section class="favorites-page hidden">
-      <h5 class="header" id="question">Your Favorites</h5>
+      <h5 class="header" id="question"> Your Favorites </h5>
 
-      <div>
-        <div class="input-stuff">
+      <div id="input-box">
 
-        </div>
         <div>
           <button class="button-stuff" id="view-main"> Return to Main </button>
         </div>
-        <div>
-
-        </div>
-      </div>
-
-      <div id="favorites-box">
 
       </div>
 
-      <script type="text/javascript" src="main.js"></script>
+      <div class="favorites-list">
+
+      </div>
+
     </section>
+
+  <section class="hidden">
+    <button class="button-stuff" id="favorite-button"> Favorite Message </button>
+  </section>
+
+    <script type="text/javascript" src="main.js"></script>
   </body>
 
 </html>
